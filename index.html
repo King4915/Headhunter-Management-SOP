@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>猎头合作 SOP 手册</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F4F1EA;
+  --ink: #0F0F0F;
+  --ink-2: #3D3D3D;
+  --ink-3: #7A7A7A;
+  --line: #D9D4C8;
+  --accent: #D4F24C;
+  --warn: #D9532B;
+  --good: #2E7D5B;
+  --row-hover: #EDEAE1;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 13px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HERO */
+.hero {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 72px 0 52px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: 'SOP';
+  position: absolute;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 260px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.03);
+  top: -50px;
+  right: -10px;
+  line-height: 1;
+  letter-spacing: -12px;
+}
+.hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 44px;
+  position: relative;
+  z-index: 1;
+}
+.hero-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+.hero-meta {
+  display: flex;
+  gap: 28px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* BASELINE */
+.baseline {
+  max-width: 1080px;
+  margin: -28px auto 0;
+  position: relative;
+  z-index: 2;
+  padding: 0 44px;
+}
+.baseline-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+.baseline-cell {
+  padding: 18px 14px;
+  border-right: 1px solid var(--line);
+}
+.baseline-cell:last-child { border-right: none; }
+.baseline-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 6px;
+}
+.baseline-value {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+/* MAIN */
+.main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 52px 44px 100px;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  gap: 0;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+}
+.nav-item {
+  padding: 12px 18px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-3);
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all .2s;
+}
+.nav-item:hover { color: var(--ink); }
+.nav-item.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* SECTION */
+.section {
+  margin-bottom: 48px;
+  scroll-margin-top: 20px;
+}
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+}
+.section-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+.section-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.3px;
+}
+.section-kicker {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-left: auto;
+}
+
+/* SOP ROW */
+.sop-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 180px;
+  border: 1px solid var(--line);
+  border-bottom: none;
+  background: #fff;
+}
+.sop-row:last-child { border-bottom: 1px solid var(--line); }
+.sop-row:hover { background: var(--row-hover); }
+.sop-step {
+  padding: 12px 14px;
+  border-right: 1px solid var(--line);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--ink-3);
+  display: flex;
+  align-items: center;
+}
+.sop-action {
+  padding: 12px 16px;
+  border-right: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+.sop-action strong { color: var(--ink); font-weight: 600; }
+.sop-output {
+  padding: 12px 14px;
+  font-size: 11px;
+  color: var(--ink-3);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sop-output .out-tag {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 1px 6px;
+  margin-bottom: 4px;
+  align-self: flex-start;
+}
+
+/* FULL TABLE */
+.full-tbl {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--line);
+  font-size: 12.5px;
+}
+.full-tbl th {
+  text-align: left;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 10px 12px;
+  border-bottom: 1.5px solid var(--ink);
+  background: var(--paper);
+}
+.full-tbl td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-2);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.full-tbl tr:last-child td { border-bottom: none; }
+
+/* TAG */
+.tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 1px 6px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+.tag-red { color: var(--warn); }
+.tag-green { color: var(--good); }
+.tag-dark { color: var(--ink); background: var(--ink); color: #fff; border-color: var(--ink); }
+
+/* CALLOUT */
+.callout {
+  border-left: 3px solid var(--ink);
+  padding: 12px 16px;
+  margin: 16px 0;
+  font-size: 12px;
+  line-height: 1.6;
+  background: var(--paper);
+}
+.callout-warn { border-color: var(--warn); background: rgba(217,83,43,0.04); }
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 36px;
+  border-top: 1px solid var(--line);
+  font-size: 10px;
+  color: var(--ink-3);
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .sop-row { grid-template-columns: 1fr; }
+  .sop-step { border-right: none; border-bottom: 1px solid var(--line); }
+  .sop-action { border-right: none; border-bottom: 1px solid var(--line); }
+  .baseline-grid { grid-template-columns: 1fr 1fr; }
+  .hero h1 { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Headhunter Collaboration SOP Manual</div>
+    <h1>猎头合作 SOP 手册</h1>
+    <div class="hero-meta">
+      <span>P/T/M 体系中高端寻访</span>
+      <span>招聘团队归口</span>
+      <span>发布之日起生效</span>
+    </div>
+  </div>
+</div>
+
+<!-- BASELINE -->
+<div class="baseline">
+  <div class="baseline-grid">
+    <div class="baseline-cell">
+      <div class="baseline-label">开放范围</div>
+      <div class="baseline-value">P4/T4+ · M2+</div>
+    </div>
+    <div class="baseline-cell">
+      <div class="baseline-label">基准费率</div>
+      <div class="baseline-value">20%</div>
+    </div>
+    <div class="baseline-cell">
+      <div class="baseline-label">溢价通道</div>
+      <div class="baseline-value">A级 20→22%</div>
+    </div>
+    <div class="baseline-cell">
+      <div class="baseline-label">付款节奏</div>
+      <div class="baseline-value">入职30天50% / 过保50%</div>
+    </div>
+    <div class="baseline-cell">
+      <div class="baseline-label">保期退款</div>
+      <div class="baseline-value">15日退全款 / 补推1名</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <div class="nav">
+    <div class="nav-item active" data-target="s1">01 准入</div>
+    <div class="nav-item" data-target="s2">02 分级</div>
+    <div class="nav-item" data-target="s3">03 派单</div>
+    <div class="nav-item" data-target="s4">04 归属</div>
+    <div class="nav-item" data-target="s5">05 结算</div>
+    <div class="nav-item" data-target="s6">06 考核</div>
+    <div class="nav-item" data-target="s7">07 汰换</div>
+    <div class="nav-item" data-target="s8">08 红线</div>
+  </div>
+
+  <!-- 01 准入 -->
+  <div class="section" id="s1">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2 class="section-title">准入</h2>
+      <span class="section-kicker">Onboarding</span>
+    </div>
+    <div class="sop-row">
+      <div class="sop-step">STEP 01</div>
+      <div class="sop-action"><strong>资料与背调</strong> — 收齐四证一案（执照/账户/法人/顾问简介+交付案例），企查查核查纠纷/仲裁/失信→命中即否决。确认顾问为自有员工，禁转包。</div>
+      <div class="sop-output"><span class="out-tag">判定</span>齐全→评审 / 缺项→退回 / 背调命中→否决</div>
+    </div>
+    <div class="sop-row">
+      <div class="sop-step">STEP 02</div>
+      <div class="sop-action"><strong>试单评估</strong> — 派 P4/T4 中等岗，周期 2–4 周。面谈核验职级理解，明确禁包装 P3/T3/M1 为 P4/T4/M2。</div>
+      <div class="sop-output"><span class="out-tag">输出</span>合格→编码入池 / 不合格→6月冷冻</div>
+    </div>
+    <div class="sop-row">
+      <div class="sop-step">STEP 03</div>
+      <div class="sop-action"><strong>池子分类</strong> — 正式池（S/A/B 长期）、临时（单次专项）、黑名单（造假/撞库/挖人/泄密）。</div>
+      <div class="sop-output"><span class="out-tag">输出</span>唯一猎头编码 + 赛道标签 + 台账</div>
+    </div>
+  </div>
+
+  <!-- 02 分级 -->
+  <div class="section" id="s2">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2 class="section-title">分级</h2>
+      <span class="section-kicker">Tiering</span>
+    </div>
+    <table class="full-tbl">
+      <tr><th>等级</th><th>可承接</th><th>费率</th><th>溢价权限</th><th>动态规则</th></tr>
+      <tr><td><span class="tag tag-dark">S</span></td><td>M7–M9 封闭稀缺</td><td>专项审批</td><td>独立高阶专项费率</td><td>—</td></tr>
+      <tr><td><span class="tag">A</span></td><td>P6–P7 / T6–T7 / M4+</td><td>20%</td><td>可申请 20→22%（一岗一单审批）</td><td>当季&lt;70分→溢价自动失效</td></tr>
+      <tr><td><span class="tag">B</span></td><td>P4–P5 / T4–T5 / M2–M3</td><td>20%</td><td>无</td><td>—</td></tr>
+      <tr><td><span class="tag tag-red">C</span></td><td>受限派单</td><td>20%</td><td>无</td><td>—</td></tr>
+    </table>
+    <div class="callout callout-warn" style="margin-top:12px">
+      <strong>商务红线：</strong>口头/即时通讯承诺费率、独家、补偿一律无效，须书面审批留痕。
+    </div>
+  </div>
+
+  <!-- 03 派单 -->
+  <div class="section" id="s3">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2 class="section-title">派单</h2>
+      <span class="section-kicker">Dispatch</span>
+    </div>
+    <div class="sop-row">
+      <div class="sop-step">STEP 01</div>
+      <div class="sop-action"><strong>标准岗位包</strong> — 一次给全：职级对标、汇报线、薪酬带宽、硬性门槛、寻访难点、候选人对标。禁仅甩 JD。职级前置对齐，明确禁推低职级。</div>
+      <div class="sop-output"><span class="out-tag">输出</span>标准岗位包</div>
+    </div>
+    <div class="sop-row">
+      <div class="sop-step">STEP 02</div>
+      <div class="sop-action"><strong>时效管控</strong> — 猎头收需求 24h 反馈思路；HR 收简历 2 工作日初筛；面试结束 2 工作日同步评价。涉密高管岗 S 级优先，A 级须签保密补充协议。简历入口唯一（ATS/统一邮箱）。</div>
+      <div class="sop-output"><span class="out-tag">超时</span>猎头→配合度扣分 / HR→内部追溯</div>
+    </div>
+  </div>
+
+  <!-- 04 归属 -->
+  <div class="section" id="s4">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2 class="section-title">归属</h2>
+      <span class="section-kicker">Ownership</span>
+    </div>
+    <div class="sop-row">
+      <div class="sop-step">RULE 01</div>
+      <div class="sop-action"><strong>保护期</strong> — 归属只认 ATS 时间戳。P4–P5/T4–T5/M2–M3 保护 90 天；P6–P7/T6–T7/M4–M9 保护 180 天。期内录用→归属对应猎头。自主投递→归属公司。</div>
+      <div class="sop-output"><span class="out-tag">判定</span>最早有效投递时间</div>
+    </div>
+    <div class="sop-row">
+      <div class="sop-step">RULE 02</div>
+      <div class="sop-action"><strong>撞库与刷量</strong> — 多猎头撞库以最早时间戳判定。明知在库仍重复推送→单次大额扣分，多次降 C。禁批量扒简历海投，推荐须完成前置意向沟通。</div>
+      <div class="sop-output"><span class="out-tag">输出</span>撞库争议处理单（06）→台账</div>
+    </div>
+  </div>
+
+  <!-- 05 结算 -->
+  <div class="section" id="s5">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2 class="section-title">结算</h2>
+      <span class="section-kicker">Billing</span>
+    </div>
+    <div class="sop-row">
+      <div class="sop-step">STEP 01</div>
+      <div class="sop-action"><strong>计费与付款</strong> — 基数：offer 固定税前年薪（不含浮动/年终/期权/补贴）。入职满 30 天付 50%；过 6 个月保期付 50%。</div>
+      <div class="sop-output"><span class="out-tag">输出</span>付款审批单→财务台账</div>
+    </div>
+    <div class="sop-row">
+      <div class="sop-step">STEP 02</div>
+      <div class="sop-action"><strong>退款与补推</strong> — 保期 6 月内流失（离职/绩效淘汰）：15 工作日内全额退首期 50%，或免费补推同职级 1 名（沿用本规则）。我方单方面调岗/降薪导致流失→免责。</div>
+      <div class="sop-output"><span class="out-tag">输出</span>退款确认单 OR 补推协议</div>
+    </div>
+  </div>
+
+  <!-- 06 考核 -->
+  <div class="section" id="s6">
+    <div class="section-head">
+      <span class="section-num">06</span>
+      <h2 class="section-title">考核</h2>
+      <span class="section-kicker">Performance</span>
+    </div>
+    <table class="full-tbl">
+      <tr><th>维度</th><th>分值</th><th>观测点</th><th>结果</th><th>处理</th></tr>
+      <tr><td>简历质量</td><td>35</td><td>职级匹配/真实/前置沟通；包装注水海投按次扣</td><td rowspan="4" style="vertical-align:middle"><span class="tag tag-green">≥85 优秀</span><br><span class="tag">70-84 合格</span><br><span class="tag tag-red">60-69 整改</span><br><span class="tag tag-red">&lt;60 淘汰</span></td><td rowspan="4" style="vertical-align:middle">优先派单+溢价保留<br>正常派单<br>缩减派单+整改通知<br>移出正式池</td></tr>
+      <tr><td>转化效率</td><td>25</td><td>有效简历率/到场率；高阶岗单独评估</td></tr>
+      <tr><td>交付结果</td><td>25</td><td>入职数/保期流失数</td></tr>
+      <tr><td>合规配合</td><td>15</td><td>撞库/对账/保密/挖人</td></tr>
+    </table>
+  </div>
+
+  <!-- 07 汰换 -->
+  <div class="section" id="s7">
+    <div class="section-head">
+      <span class="section-num">07</span>
+      <h2 class="section-title">汰换</h2>
+      <span class="section-kicker">Exit</span>
+    </div>
+    <div class="sop-row">
+      <div class="sop-step">RULE</div>
+      <div class="sop-action"><strong>退出条件</strong> — 连续两季不合格 / 整改无改善 / 核心顾问全流失 / 连续 6 月无有效交付 → 移出正式池。备选池：每赛道 S/A 级储备 2–3 家。年度优秀→优先派单+付款+行业地图同步。</div>
+      <div class="sop-output"><span class="out-tag">输出</span>汰换通知 + 台账更新</div>
+    </div>
+  </div>
+
+  <!-- 08 红线 -->
+  <div class="section" id="s8">
+    <div class="section-head">
+      <span class="section-num">08</span>
+      <h2 class="section-title">红线</h2>
+      <span class="section-kicker">Zero Tolerance</span>
+    </div>
+    <div class="sop-row">
+      <div class="sop-step">VETO</div>
+      <div class="sop-action"><strong>一票否决</strong> — ①多次包装低职级 ②挖我方在职员工 ③泄露组织/薪酬信息 ④返佣/伪造履历 ⑤恶意佣金诉讼 → 直接黑名单，永不合作。</div>
+      <div class="sop-output"><span class="out-tag">输出</span>黑名单审批 + 终止通知</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  HEADHUNTER COLLABORATION SOP MANUAL · 招聘团队归口 · 年度复盘迭代
+</div>
+
+<script>
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.section');
+
+navItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const targetId = item.getAttribute('data-target');
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+window.addEventListener('scroll', () => {
+  let currentId = 's1';
+  sections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top <= 100) {
+      currentId = sec.getAttribute('id');
+    }
+  });
+  navItems.forEach(item => {
+    if (item.getAttribute('data-target') === currentId) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
